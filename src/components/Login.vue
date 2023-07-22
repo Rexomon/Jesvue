@@ -33,11 +33,10 @@ export default {
     justify-content: center;
     align-items: center;
     height: 80vh;
-
 }
 
 .login-register-form {
-    max-width: 300px;
+    /* max-width: 350px; */
     padding: 20px;
     border-radius: 5px;
     /* Add box curve of 2px */
