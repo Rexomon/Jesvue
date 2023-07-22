@@ -1,32 +1,35 @@
 <script>
-import { mapActions } from 'pinia';
 import { useDataStore } from '../stores/counter';
+import { mapActions } from 'pinia';
+
 export default {
     name: "LoginPage",
     data() {
         return {
-            input: "",
+            username: "",
+            email: "",
             password: "",
+            phoneNumber: ""
         };
     },
     methods: {
-        ...mapActions(useDataStore, ["handleLogin"]), handleLoginPage() {
-            const value = {
-                input: this.input,
-                password: this.password
-            };
+        ...mapActions(useDataStore, ["handleRegister"]),
+        handleRegisterPage() {
+            const { username, email, password } = this
 
-            this.handleLogin(value, this.$route.query.code)
+            const value = { username, email, password }
+
+            this.handleRegister(value)
         }
     }
-
 };
 </script>
+
 <template>
     <div class="login-register">
         <div class="login-register-form">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="" v-model="input" />
+                <input type="text" class="form-control" id="floatingInput" placeholder="Username" v-model="username" />
                 <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating mb-3">
@@ -34,11 +37,11 @@ export default {
                     v-model="password" />
                 <label for="floatingPassword">Password</label>
             </div>
-            <p class="jenck">Don't have an account?
-                <RouterLink class="jnck " to="/register"> Sign Up</RouterLink>
+            <p class="jenck">Already have an account?
+                <RouterLink class="jnck" to="/login"> Login</RouterLink>
             </p>
-            <button type="submit" @click="handleLoginPage()" class="btn btn-primary btn-hover">
-                Submit
+            <button type="submit" @click="handleRegisterPage" class="btn btn-primary btn-hover">
+                Register
             </button>
         </div>
     </div>
@@ -90,4 +93,4 @@ export default {
     /* Scale up the button on hover */
 }
 </style>
-    
+  
