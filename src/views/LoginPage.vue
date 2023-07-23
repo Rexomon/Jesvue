@@ -1,6 +1,7 @@
 <script>
 import { mapActions } from 'pinia';
 import { useDataStore } from '../stores/counter';
+
 export default {
     name: "LoginPage",
     data() {

@@ -1,15 +1,14 @@
 <script>
-import { useDataStore } from '../stores/counter';
 import { mapActions } from 'pinia';
+import { useDataStore } from '../stores/counter';
 
 export default {
-    name: "LoginPage",
+    name: "RegisterPage",
     data() {
         return {
             username: "",
             email: "",
             password: "",
-            phoneNumber: ""
         };
     },
     methods: {
@@ -93,4 +92,3 @@ export default {
     /* Scale up the button on hover */
 }
 </style>
-  

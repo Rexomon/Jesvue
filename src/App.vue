@@ -1,18 +1,33 @@
 
 
 <script>
-import { defineComponent } from 'vue';
-import Navbar from './components/Navbar.vue'
+import { mapWritableState, mapActions } from "pinia"
+import { useDataStore } from './stores/counter';
+import Navbar from './components/Navbar.vue';
 
 
 //define 
-export default defineComponent({
+export default {
     name: 'appvue',
     components: {
         Navbar //call Navbar from import Navbar
     },
 
-});
+    methods: {
+        ...mapActions(useDataStore, ["getUsername"])
+    },
+
+    created() {
+
+        if (localStorage.access_token) {
+            this.getUsername()
+            this.isLogin = true
+        }
+    },
+    computed: {
+        ...mapWritableState(useDataStore, ["isLogin"])
+    }
+};
 </script>
 
 

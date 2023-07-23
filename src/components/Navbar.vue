@@ -38,6 +38,7 @@ import { RouterLink } from 'vue-router';
 
 .active-link {
     text-decoration: underline;
+    font-weight: bold;
     text-underline-offset: 4px;
 }
 </style>
