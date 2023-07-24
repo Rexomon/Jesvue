@@ -3,6 +3,8 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 import url from 'url'
 
+const baseUrl = `http://localhost:3000`
+
 export const useDataStore = defineStore('data', {
     state: () => ({
         username: '',
@@ -20,11 +22,11 @@ export const useDataStore = defineStore('data', {
             this.router.push('/')
         },
 
-        async handeRegister(value) {
+        async handleRegister(value) {
             try {
                 const { username, email, password } = value
                 const { data } = await axios({
-                    url: baseUrl + '/users/register',
+                    url: baseUrl + '/register',
                     method: 'POST',
                     data: {
                         username,
@@ -69,7 +71,7 @@ export const useDataStore = defineStore('data', {
                 }
 
                 const { data } = await axios({
-                    url: baseUrl + '/user/login',
+                    url: baseUrl + '/login',
                     method: 'POST',
                     data: dataInput()
                 })

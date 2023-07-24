@@ -36,9 +36,9 @@ export default {
                 <label for="floatingPassword">Password</label>
             </div>
             <p class="jenck">Don't have an account?
-                <RouterLink class="jnck " to="/register"> Sign Up</RouterLink>
+                <RouterLink class="jnck " to="/register">Sign Up</RouterLink>
             </p>
-            <button type="submit" @click="handleLoginPage()" class="btn btn-primary btn-hover">
+            <button type="submit" @click="handleLoginPage" class="btn btn-primary btn-hover">
                 Submit
             </button>
         </div>
@@ -46,7 +46,7 @@ export default {
 </template>
     
     
-<style>
+<style >
 .jenck,
 .jnck {
     margin: 2px;
@@ -58,17 +58,19 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 50vh;
 }
 
 .login-register-form {
-    padding: 50px;
-    border-radius: 5px;
-    /* Add box curve of 2px */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: rgba(160, 230, 190, 0.744) 0px 2px 4px 0px,
+        rgba(119, 215, 138, 0.756) 0px 2px 16px 0px;
+    padding: 40px 25px;
     border: 1px solid #ccc;
-    /* Add border */
-    background-color: #fff;
-    /* Add background color */
+    width: 60vh;
+    margin: 250px auto 0;
+
 }
 
 .jnck:hover {
